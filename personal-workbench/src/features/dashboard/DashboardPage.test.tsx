@@ -1,6 +1,7 @@
 import { App as AntApp } from 'antd'
-import { render, screen, waitFor } from '@testing-library/react'
+import { act, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import dayjs from 'dayjs'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { DashboardPage } from './DashboardPage'
@@ -50,5 +51,38 @@ describe('dashboard module summaries', () => {
     expect(
       screen.getByRole('heading', { name: '开发工作目标页' }),
     ).toBeVisible()
+  })
+
+  it('updates a module summary after new fitness data is added', async () => {
+    render(
+      <AntApp>
+        <MemoryRouter initialEntries={['/']}>
+          <DashboardPage />
+        </MemoryRouter>
+      </AntApp>,
+    )
+
+    await waitFor(() =>
+      expect(screen.getByText('健身计划')).toBeVisible(),
+    )
+    const fitnessCard = screen.getByText('健身计划').closest('.summary-card')
+    expect(fitnessCard).not.toBeNull()
+    expect(
+      within(fitnessCard as HTMLElement).getByText('暂无重要事项'),
+    ).toBeVisible()
+
+    await act(async () => {
+      await repositories.workoutSessions.create({
+        date: dayjs().format('YYYY-MM-DD'),
+        title: '动态新增训练',
+        status: 'pending',
+      })
+    })
+
+    await waitFor(() =>
+      expect(
+        within(fitnessCard as HTMLElement).getByText('动态新增训练'),
+      ).toBeVisible(),
+    )
   })
 })

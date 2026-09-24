@@ -10,7 +10,7 @@
 | 检查 | 结果 |
 | --- | --- |
 | `npm run lint` | 通过 |
-| `npm run test` | 8 个测试文件、21 项测试通过 |
+| `npm run test` | 8 个测试文件、23 项测试通过 |
 | `npm run build` | 通过 |
 | `npm run test:e2e` | 17 项端到端测试通过 |
 | 依赖安全检查 | 0 个已知漏洞 |
@@ -22,6 +22,8 @@ dist/index.html
 ```
 
 构建文件已内联 JavaScript 和样式，并已在 Chrome 中通过 `file://` 直接打开和刷新持久化测试。项目根目录 `index.html` 在 `file://` 模式下会自动跳转到 `dist/index.html`。
+
+首页模块摘要已覆盖当天训练记录、当前星期训练计划、进行中项目和学习中内容，并验证新增数据后自动刷新。
 
 ## PRD 验收项
 
