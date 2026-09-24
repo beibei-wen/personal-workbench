@@ -23,3 +23,17 @@ test('the built single file persists data when opened directly', async ({
   await page.reload()
   await expect(page.locator('.quick-note-text', { hasText: note })).toBeVisible()
 })
+
+test('the project entry redirects to the built file when opened directly', async ({
+  page,
+}) => {
+  const entryUrl = pathToFileURL(
+    path.resolve(process.cwd(), 'index.html'),
+  ).toString()
+
+  await page.goto(entryUrl)
+  await expect(
+    page.getByRole('heading', { name: '首页总览' }),
+  ).toBeVisible()
+  expect(page.url()).toContain('/dist/index.html')
+})

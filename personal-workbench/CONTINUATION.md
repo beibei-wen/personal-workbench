@@ -15,13 +15,14 @@
   - `npm run lint`
   - `npm run test`：8 个测试文件、21 项测试通过
   - `npm run build`
-  - `npm run test:e2e`：16 项端到端测试通过
+  - `npm run test:e2e`：17 项端到端测试通过
 - 最新构建产物：`dist/index.html`
 - 视觉增强已完成：模块强调色、导航图标底色、首页概览色块、摘要卡色条、页面入场、卡片错峰、悬停和状态反馈动画。
 - 2026-09-24 完成细节修复：
   - 快速备忘在中文输入法组合输入期间按回车时不会提前提交。
   - 饮食计划可以清除当天全部饮水记录，并显示每条饮水的记录时间。
-- 2026-09-24 再次运行 `npm run check`，21 项单元与组件测试、16 项端到端测试和生产构建全部通过。
+- 2026-09-24 再次运行 `npm run check`，21 项单元与组件测试、17 项端到端测试和生产构建全部通过。
+- 项目根目录 `index.html` 现在支持直接双击打开，并通过 `file://` 自动跳转到构建后的应用。
 
 ## 明天继续开发时先做
 
@@ -53,5 +54,5 @@ npm run check
 ## 最近打开的版本
 
 ```text
-file:///E:/codexproject/coke/personal-workbench/dist/index.html
+file:///E:/codexproject/coke/personal-workbench/index.html
 ```

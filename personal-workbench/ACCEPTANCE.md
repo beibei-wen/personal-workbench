@@ -12,7 +12,7 @@
 | `npm run lint` | 通过 |
 | `npm run test` | 8 个测试文件、21 项测试通过 |
 | `npm run build` | 通过 |
-| `npm run test:e2e` | 16 项端到端测试通过 |
+| `npm run test:e2e` | 17 项端到端测试通过 |
 | 依赖安全检查 | 0 个已知漏洞 |
 
 生产构建产物：
@@ -21,7 +21,7 @@
 dist/index.html
 ```
 
-构建文件已内联 JavaScript 和样式，并已在 Chrome 中通过 `file://` 直接打开和刷新持久化测试。
+构建文件已内联 JavaScript 和样式，并已在 Chrome 中通过 `file://` 直接打开和刷新持久化测试。项目根目录 `index.html` 在 `file://` 模式下会自动跳转到 `dist/index.html`。
 
 ## PRD 验收项
 

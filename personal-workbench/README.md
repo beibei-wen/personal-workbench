@@ -42,6 +42,8 @@ dist/index.html
 
 该文件已经内联 JavaScript 和样式，可以直接用浏览器打开。数据会绑定到当前浏览器和当前文件路径，因此不要随意移动 `dist` 目录。日常更新时建议继续使用同一路径。
 
+也可以直接打开项目根目录的 `index.html`。在 `file://` 模式下，它会自动跳转到已经构建好的 `dist/index.html`，不需要启动开发服务器。
+
 ## 数据备份
 
 - 数据默认保存在当前电脑的浏览器 IndexedDB 中。
@@ -84,4 +86,3 @@ npm run check
 - Zod
 - Vitest + React Testing Library
 - Playwright
-
