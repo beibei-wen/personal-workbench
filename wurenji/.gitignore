@@ -1,0 +1,21 @@
+# Keil build output
+*.o
+*.d
+*.crf
+*.axf
+*.hex
+*.map
+*.htm
+*.lnp
+*.sct
+*.dep
+*.lst
+
+# Keil local/user settings
+*.uvguix.*
+*.merge
+.vscode/
+
+# Keil generated output folders
+P01_flight_hal/MDK-ARM/P01_flight_hal/
+P02_remote_hal/MDK-ARM/P02_remote_hal/
